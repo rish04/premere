@@ -75,7 +75,7 @@ transporter.sendMail(mailOptions, function(error, info) {
                 transporter.close();
             };
 
-            var sendESTANCIA = function(filename){
+            var sendESTANCIA = function(name,mobile,time,filename){
                 
                     var mailOptions={
                         
