@@ -17,7 +17,7 @@ var sendUB = function(name,mobile,time,filename){
         
                 from: 'premere.shop@gmail.com',
                to : 'premere.ub@gmail.com',
-                subject : `Xerox for ${name} at ${time}`,
+                subject : `PrintOut for ${name} at ${time}`,
                 text : `
                 Name : ${name}
                 Mobile : ${mobile}
@@ -49,7 +49,7 @@ transporter.sendMail(mailOptions, function(error, info) {
                 
                         from: 'premere.shop@gmail.com',
                         to : 'premere.abode@gmail.com',
-                        subject : `Xerox for ${filename}`,
+                        subject : `PrintOut for ${filename}`,
                         text : `
                         Name : ${name}
                         Mobile : ${mobile}
@@ -79,9 +79,9 @@ transporter.sendMail(mailOptions, function(error, info) {
                 
                     var mailOptions={
                         
-                                from: 'sushantshekhar20@gmail.com',
-                                to : 'sushant9@live.com',
-                                subject : `Xerox for ${filename}`,
+                                from: 'premere.shop@gmail.com',
+                                to : 'premere.abode@gmail.com',
+                                subject : `PrintOut for ${filename}`,
                                 text : 'Test TxT',
                                 attachments: [
                                     {   // utf-8 string as an attachment
