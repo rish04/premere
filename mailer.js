@@ -50,7 +50,7 @@ transporter.sendMail(mailOptions, function(error, info) {
                         from: 'premere.shop@gmail.com',
                         to : 'premere.abode@gmail.com',
                         subject : `PrintOut for ${filename}`,
-                        text : `
+                        text :  `
                         Name : ${name}
                         Mobile : ${mobile}
                         Time : ${time}
@@ -82,7 +82,11 @@ transporter.sendMail(mailOptions, function(error, info) {
                                 from: 'premere.shop@gmail.com',
                                 to : 'premere.ub@gmail.com',
                                 subject : `PrintOut for ${filename}`,
-                                text : 'Test TxT',
+                                text : `
+                                    Name : ${name}
+                        Mobile : ${mobile}
+                        Time : ${time}
+                        Filename: ${filename}`,
                                 attachments: [
                                     {   // utf-8 string as an attachment
                                         path : `uploads/${filename}`,
