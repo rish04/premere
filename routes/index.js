@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Premere' });
 });
 
-router.post('/', upload.single('xerox'),function(req, res) {
+router.post('/', upload.multiple('xerox'),function(req, res) {
   console.log(req.body);
 if(req.body.pick === 'UB'){
   mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.file.filename);
