@@ -80,7 +80,7 @@ transporter.sendMail(mailOptions, function(error, info) {
                     var mailOptions={
                         
                                 from: 'premere.shop@gmail.com',
-                                to : 'premere.abode@gmail.com',
+                                to : 'premere.ub@gmail.com',
                                 subject : `PrintOut for ${filename}`,
                                 text : 'Test TxT',
                                 attachments: [
