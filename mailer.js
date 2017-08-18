@@ -81,7 +81,7 @@ transporter.sendMail(mailOptions, function(error, info) {
     var mailOptions={
         
                 from: 'premere.shop@gmail.com',
-               to : 'premere.ub@gmail.com',
+               to : 'premere.estancia@gmail.com',
                 subject : `PrintOut for ${name} at ${time}`,
                 text : `
                 Name : ${name}
