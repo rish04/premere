@@ -77,34 +77,37 @@ transporter.sendMail(mailOptions, function(error, info) {
 
             var sendESTANCIA = function(name,mobile,time,filename){
                 
-                    var mailOptions={
-                        
-                                from: 'premere.shop@gmail.com',
-                                to : 'premere.ub@gmail.com',
-                                subject : `PrintOut for ${filename}`,
-                                text : `
-                                    Name : ${name}
-                        Mobile : ${mobile}
-                        Time : ${time}
-                        Filename: ${filename}`,
-                                attachments: [
-                                    {   // utf-8 string as an attachment
-                                        path : `uploads/${filename}`,
-                                    }
-                                ]
-                            }
-                        
-                transporter.sendMail(mailOptions, function(error, info) {
-                        
-                   if (error) {
-                               console.log(error);
-                                
-                              } else {
-                               console.log(info);
-                              }
-                        });
-                        // close connection 
-                        transporter.close();
-                    };
+                
+    var mailOptions={
+        
+                from: 'premere.shop@gmail.com',
+               to : 'premere.ub@gmail.com',
+                subject : `PrintOut for ${name} at ${time}`,
+                text : `
+                Name : ${name}
+                Mobile : ${mobile}
+                Time : ${time}
+                Filename: ${filename}`,
+                attachments: [
+                    {   // utf-8 string as an attachment
+                        path : `uploads/${filename}`,
+                    }
+                ]
+            }
+        
+transporter.sendMail(mailOptions, function(error, info) {
+        
+   if (error) {
+               console.log(error);
+                
+              } else {
+               console.log(info);
+              }
+        });
+        // close connection 
+        transporter.close();
+    };
+                
+                  
 
     module.exports = {sendUB,sendABODE,sendESTANCIA}
