@@ -28,9 +28,9 @@ if(req.body.pick === 'UB'){
   mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.file.filename);
     // mail to UB
   }
-// if(req.body.pick === "Estancia") {
-//       // mail to estancia
-// }
+ if(req.body.pick === "Estancia") {
+       mailer.ESTANCIA(req.body.name,req.body.mobile,req.body.time,req.file.filename);
+ }
 if(req.body.pick === "Abode") {
   mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.file.filename);
   //mail to abode.
