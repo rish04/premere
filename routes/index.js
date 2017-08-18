@@ -29,7 +29,7 @@ if(req.body.pick === 'UB'){
     // mail to UB
   }
  if(req.body.pick === "Estancia") {
-       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.file.filename);
+       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.file.filename,req.body.pick);
  }
 if(req.body.pick === "Abode") {
   mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.file.filename);
