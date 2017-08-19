@@ -38,33 +38,33 @@
                 <div class="col s12">
                   <div class="card grey darken-2">
                     <div class="card-content white-text">
-                      <span class="card-title">Upload Your Doc</span>
+                      <span class="card-title">Upload Your Docs</span>
 
                       <form method="post" enctype="multipart/form-data">
                         <div class="file-field input-field">
                           <div class="btn">
-                            <span>Upload</span>
-                            <input type="file" name="xerox">
+                            <span>Select</span>
+                            <input type="file" name="xerox" multiple required>
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
                           </div>
                         </div>
                         <p>Name</p>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                         <p>Mobile</p>
-                        <input type="text" name="mobile">
+                        <input type="text" name="mobile" required>
 
                         <p>Email</p>
-                        <input type="email" name="email">
+                        <input type="email" name="email" required>
 
-                          <input type="text" name="time" class="timepicker" placeholder="Enter Time">
+                          <input type="text" name="time" class="timepicker" placeholder="Enter Time" required>
                           
                           <div class="field">
                             <label class="label">PickUp Location</label>
                             <div class="control" name= "pick">
                               <div class="select" name= "pick">
-                                <select name= "pick">
+                                <select name= "pick" required>
                                   <option name= "ub">UB</option>
                                   <option name= "abode">Abode</option>
                                   <option name= "abode">Estancia</option>
