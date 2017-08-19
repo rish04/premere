@@ -6,108 +6,122 @@ var transporter = nodemailer.createTransport(smtpTransport({
     service: "Gmail",
     auth: {
         user: "premere.shop@gmail.com",
-        pass: "Premere.98765" // Generate: https://support.google.com/accounts/answer/185833
+        pass: "Premere.98765"
     }
 })
 );
 
-var sendUB = function(name,mobile,time,filename){
+var sendUB = function(name,mobile,time,files){
 
-    var mailOptions={
-        
-                from: 'premere.shop@gmail.com',
-               to : 'premere.ub@gmail.com',
-                subject : `PrintOut for ${name} at ${time}`,
-                text : `
-                Name : ${name}
-                Mobile : ${mobile}
-                Time : ${time}
-                Filename: ${filename}`,
-                attachments: [
-                    {   // utf-8 string as an attachment
-                        path : `uploads/${filename}`,
-                    }
-                ]
-            }
-        
-transporter.sendMail(mailOptions, function(error, info) {
-        
-   if (error) {
-               console.log(error);
+    var attachments_arr = [];
+    var path ;
+        for(i=0;i<files.length;i++)
+        {
+            path = "uploads/" + files[i].filename;
+            attachments_arr.push({ 'path' : path})
+
+      }
+      
+
+        var mailOptions={
+            
+                    from: 'premere.shop@gmail.com',
+                    to : 'premere.ub@gmail.com',
                 
-              } else {
-               console.log(info);
-              }
-        });
-        // close connection 
-        transporter.close();
+                    subject : `Xerox for ${name} at ${time}`,
+                    text : `
+                    Name : ${name}
+                    Mobile : ${mobile}
+                    Time : ${time}`,
+                    attachments: attachments_arr
+                }
+            
+    transporter.sendMail(mailOptions, function(error, info) {
+            
+    if (error) {
+                console.log(error);
+                    
+                } else {
+                console.log(info);
+                }
+            });
+            // close connection 
+            transporter.close();
     };
 
-    var sendABODE = function(name,mobile,time,filename){
+    var sendABODE = function(name,mobile,time,files){
         
-            var mailOptions={
-                
+            var attachments_arr = [];
+            var path ;
+                for(i=0;i<files.length;i++)
+                {
+                    path = "uploads/" + files[i].filename;
+                    attachments_arr.push({ 'path' : path})
+        
+              }
+              
+        
+                var mailOptions={
                         from: 'premere.shop@gmail.com',
                         to : 'premere.abode@gmail.com',
-                        subject : `PrintOut for ${filename}`,
-                        text :  `
-                        Name : ${name}
-                        Mobile : ${mobile}
-                        Time : ${time}
-                        Filename: ${filename}`,
-                        attachments: [
-                            {   // utf-8 string as an attachment
-                                path : `uploads/${filename}`,
-                            }
-                        ]
-                    }
-                
-        transporter.sendMail(mailOptions, function(error, info) {
-                
-           if (error) {
-                       console.log(error);
                         
-                      } else {
-                       console.log(info);
-                      }
-                });
-                // close connection 
-                transporter.close();
+                            subject : `Xerox for ${name} at ${time}`,
+                            text : `
+                            Name : ${name}
+                            Mobile : ${mobile}
+                            Time : ${time}`,
+                            attachments: attachments_arr
+                        }
+                    
+            transporter.sendMail(mailOptions, function(error, info) {
+                    
+            if (error) {
+                        console.log(error);
+                            
+                        } else {
+                        console.log(info);
+                        }
+                    });
+                    // close connection 
+                    transporter.close();
             };
 
-            var sendESTANCIA = function(name,mobile,time,filename){
+ var sendESTANCIA = function(name,mobile,time,files){
                 
+          var attachments_arr = [];
+                  var path ;
+                   for(i=0;i<files.length;i++)
+               {
+                 path = "uploads/" + files[i].filename;
+              attachments_arr.push({ 'path' : path})
                 
-    var mailOptions={
-        
-                from: 'premere.shop@gmail.com',
-               to : 'premere.estancia@gmail.com',
-                subject : `PrintOut for ${name} at ${time}`,
-                text : `
-                Name : ${name}
-                Mobile : ${mobile}
-                Time : ${time}
-                Filename: ${filename}`,
-                attachments: [
-                    {   // utf-8 string as an attachment
-                        path : `uploads/${filename}`,
-                    }
-                ]
-            }
-        
-transporter.sendMail(mailOptions, function(error, info) {
-        
-   if (error) {
-               console.log(error);
+               }
+                      
                 
-              } else {
-               console.log(info);
-              }
-        });
-        // close connection 
-        transporter.close();
-    };
-                
-                  
+           var mailOptions={
+                         
+                   from: 'premere.shop@gmail.com',
+                                to : 'premere.estancia@gmail.com',
+                                
+                                    subject : `Xerox for ${name} at ${time}`,
+                                    text : `
+                                    Name : ${name}
+                                    Mobile : ${mobile}
+                                    Time : ${time}`,
+                                    attachments: attachments_arr
+                                }
+                            
+                    transporter.sendMail(mailOptions, function(error, info) {
+                            
+                    if (error) {
+                                console.log(error);
+                                    
+                                } else {
+                                console.log(info);
+                                }
+                            });
+                            // close connection 
+                            transporter.close();
+                    };
 
     module.exports = {sendUB,sendABODE,sendESTANCIA}
