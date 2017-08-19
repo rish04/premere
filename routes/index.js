@@ -24,14 +24,14 @@ router.get('/', function(req, res, next) {
 
 router.post('/', upload.array('xerox', 5),function(req, res) {
 if(req.body.pick === 'UB'){
-  mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment,req.body.choose);
+  mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment);
     // mail to UB
   }
  if(req.body.pick === "Estancia") {
-       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment,req.body.choose);
+       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment);
  }
 if(req.body.pick === "Abode") {
-  mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment,req.body.choose);
+  mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment);
   //mail to abode.
 }
 
