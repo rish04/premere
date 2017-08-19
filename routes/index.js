@@ -22,22 +22,22 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Premere' });
 });
 
-router.post('/', upload.single('xerox'),function(req, res) {
-  console.log(req.body);
+router.post('/', upload.array('xerox', 5),function(req, res) {
+ // console.log(req.files[0].filename);
 if(req.body.pick === 'UB'){
-  mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.file.filename);
+  mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.files);
     // mail to UB
   }
  if(req.body.pick === "Estancia") {
-       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.file.filename);
+       mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.time,req.files);
  }
 if(req.body.pick === "Abode") {
-  mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.file.filename);
+  mailer.sendABODE(req.body.name,req.body.mobile,req.body.time,req.files);
   //mail to abode.
 }
 
   
-  res.render('thanks', { title: 'Premere' });
+   res.render('thanks', { title: 'Premere' });
   
 });
 
