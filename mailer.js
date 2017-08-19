@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 })
 );
 
-var sendUB = function(name,mobile,time,files,comment){
+var sendUB = function(name,mobile,time,files,comment,pick){
 
     var attachments_arr = [];
     var path ;
@@ -33,7 +33,8 @@ var sendUB = function(name,mobile,time,files,comment){
                     Name : ${name}
                     Mobile : ${mobile}
                     Time : ${time}
-                    Comment : ${comment}`,
+                    Comment : ${comment}
+                    choosw:${pick}'
                     attachments: attachments_arr
                 }
             
@@ -50,7 +51,7 @@ var sendUB = function(name,mobile,time,files,comment){
             transporter.close();
     };
 
-    var sendABODE = function(name,mobile,time,files,comment){
+    var sendABODE = function(name,mobile,time,files,comment,pick){
         
             var attachments_arr = [];
             var path ;
@@ -71,7 +72,8 @@ var sendUB = function(name,mobile,time,files,comment){
                             Name : ${name}
                             Mobile : ${mobile}
                             Time : ${time}
-                            Comment : ${comment}`,
+                            Comment : ${comment}
+                            choosw:${pick}`,
                             attachments: attachments_arr
                         }
                     
@@ -88,7 +90,7 @@ var sendUB = function(name,mobile,time,files,comment){
                     transporter.close();
             };
 
- var sendESTANCIA = function(name,mobile,time,files,comment){
+ var sendESTANCIA = function(name,mobile,time,files,comment,pick){
                 
           var attachments_arr = [];
                   var path ;
@@ -110,7 +112,8 @@ var sendUB = function(name,mobile,time,files,comment){
                                     Name : ${name}
                                     Mobile : ${mobile}
                                     Time : ${time}
-                                    Comment : ${comment}`,
+                                    Comment : ${comment}
+                                    choosw:${pick}`,
                                     attachments: attachments_arr
                                 }
                             
