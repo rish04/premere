@@ -23,6 +23,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', upload.array('xerox', 5),function(req, res) {
+    console.log(req.body.pick);
 if(req.body.pick === 'UB'){
   mailer.sendUB(req.body.name,req.body.mobile,req.body.time,req.files,req.body.comment);
     // mail to UB
