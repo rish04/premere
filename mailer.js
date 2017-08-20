@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 })
 );
 
-var sendUB = function(name,mobile,choose,print,time,files){
+var sendUB = function(name,mobile,choose,print,time,comment,files){
 
     var attachments_arr = [];
     var path ;
@@ -33,7 +33,8 @@ var sendUB = function(name,mobile,choose,print,time,files){
                     Mobile : ${mobile}
                     Day : ${choose}
                     Print : ${print}
-                    Time : ${time}`,
+                    Time : ${time}
+                    Comment : ${comment}`,
                     attachments: attachments_arr
                 }
             
@@ -50,7 +51,7 @@ var sendUB = function(name,mobile,choose,print,time,files){
             transporter.close();
     };
 
-    var sendABODE = function(name,mobile,choose,print,time,files){
+    var sendABODE = function(name,mobile,choose,print,time,comment,files){
         
             var attachments_arr = [];
             var path ;
@@ -72,7 +73,8 @@ var sendUB = function(name,mobile,choose,print,time,files){
                             Mobile : ${mobile}
                             Day: ${choose}
                             Print: ${print}
-                            Time : ${time}`,
+                            Time : ${time}
+                            Comment : ${comment}`,
                             attachments: attachments_arr
                         }
                     
@@ -89,7 +91,7 @@ var sendUB = function(name,mobile,choose,print,time,files){
                     transporter.close();
             };
 
- var sendESTANCIA = function(name,mobile,choose,print,time,files){
+ var sendESTANCIA = function(name,mobile,choose,print,time,comment,files){
                 
           var attachments_arr = [];
                   var path ;
@@ -112,6 +114,7 @@ var sendUB = function(name,mobile,choose,print,time,files){
                                     Mobile : ${mobile}
                                     Day : ${choose}
                                      Print: ${print}
+                                       Comment : ${comment}
                                     Time : ${time}`,
                                     attachments: attachments_arr
                                 }
