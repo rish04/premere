@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 })
 );
 
-var sendUB = function(name,mobile,choose,time,files){
+var sendUB = function(name,mobile,choose,print,time,files){
 
     var attachments_arr = [];
     var path ;
@@ -31,7 +31,8 @@ var sendUB = function(name,mobile,choose,time,files){
                     text : `
                     Name : ${name}
                     Mobile : ${mobile}
-                    Choose : ${choose}
+                    Day : ${choose}
+                    Print : ${print}
                     Time : ${time}`,
                     attachments: attachments_arr
                 }
@@ -49,7 +50,7 @@ var sendUB = function(name,mobile,choose,time,files){
             transporter.close();
     };
 
-    var sendABODE = function(name,mobile,choose,time,files){
+    var sendABODE = function(name,mobile,choose,print,time,files){
         
             var attachments_arr = [];
             var path ;
@@ -69,7 +70,8 @@ var sendUB = function(name,mobile,choose,time,files){
                             text : `
                             Name : ${name}
                             Mobile : ${mobile}
-                            Choose: ${choose}
+                            Day: ${choose}
+                            Print: ${print}
                             Time : ${time}`,
                             attachments: attachments_arr
                         }
@@ -87,7 +89,7 @@ var sendUB = function(name,mobile,choose,time,files){
                     transporter.close();
             };
 
- var sendESTANCIA = function(name,mobile,choose,time,files){
+ var sendESTANCIA = function(name,mobile,choose,print,time,files){
                 
           var attachments_arr = [];
                   var path ;
@@ -108,7 +110,8 @@ var sendUB = function(name,mobile,choose,time,files){
                                     text : `
                                     Name : ${name}
                                     Mobile : ${mobile}
-                                    Choose : ${choose}
+                                    Day : ${choose}
+                                     Print: ${print}
                                     Time : ${time}`,
                                     attachments: attachments_arr
                                 }
