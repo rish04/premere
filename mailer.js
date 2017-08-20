@@ -1,4 +1,3 @@
-
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
 
@@ -11,7 +10,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 })
 );
 
-var sendUB = function(name,mobile,time,files,comment,pick){
+var sendUB = function(name,mobile,time,files){
 
     var attachments_arr = [];
     var path ;
@@ -32,9 +31,7 @@ var sendUB = function(name,mobile,time,files,comment,pick){
                     text : `
                     Name : ${name}
                     Mobile : ${mobile}
-                    Time : ${time}
-                    Comment : ${comment}
-                    choosw:${pick}'
+                    Time : ${time}`,
                     attachments: attachments_arr
                 }
             
@@ -51,7 +48,7 @@ var sendUB = function(name,mobile,time,files,comment,pick){
             transporter.close();
     };
 
-    var sendABODE = function(name,mobile,time,files,comment,pick){
+    var sendABODE = function(name,mobile,time,files){
         
             var attachments_arr = [];
             var path ;
@@ -71,9 +68,7 @@ var sendUB = function(name,mobile,time,files,comment,pick){
                             text : `
                             Name : ${name}
                             Mobile : ${mobile}
-                            Time : ${time}
-                            Comment : ${comment}
-                            choosw:${pick}`,
+                            Time : ${time}`,
                             attachments: attachments_arr
                         }
                     
@@ -90,7 +85,7 @@ var sendUB = function(name,mobile,time,files,comment,pick){
                     transporter.close();
             };
 
- var sendESTANCIA = function(name,mobile,time,files,comment,pick){
+ var sendESTANCIA = function(name,mobile,time,files){
                 
           var attachments_arr = [];
                   var path ;
@@ -111,9 +106,7 @@ var sendUB = function(name,mobile,time,files,comment,pick){
                                     text : `
                                     Name : ${name}
                                     Mobile : ${mobile}
-                                    Time : ${time}
-                                    Comment : ${comment}
-                                    choosw:${pick}`,
+                                    Time : ${time}`,
                                     attachments: attachments_arr
                                 }
                             
