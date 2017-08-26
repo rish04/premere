@@ -1,7 +1,6 @@
 var nodemailer = require("nodemailer");
 var smtpTransport = require('nodemailer-smtp-transport');
-var apiKey = "170903A3b5ymdZc51W599aa169";
-var request = require("request");
+
 var transporter = nodemailer.createTransport(smtpTransport({
     service: "Gmail",
     auth: {
@@ -50,16 +49,6 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
             });
             // close connection 
             transporter.close();
-            console.log(stringBuilder(name , time , "UB"));
-            var string = "https://control.msg91.com/api/sendhttp.php?authkey="+apiKey + "&mobile="+ mobile + "&message=" + stringBuilder(name ,time, "UB") + "&sender=PREMERE&route=4&country=91";
-
-            request.get(string)
-                .on('error', function(err){
-                    console.log(err);
-                })
-                .on('response' , function(response){
-                    // console.log(response);
-                });
     };
 
     var sendABODE = function(name,mobile,choose,print,time,comment,files){
@@ -100,16 +89,6 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
                     });
                     // close connection 
                     transporter.close();
-                    console.log(stringBuilder(name , time , "ABODE"));
-                    var string = "https://control.msg91.com/api/sendhttp.php?authkey="+apiKey + "&mobile="+ mobile + "&message=" + stringBuilder(name ,time, "UB") + "&sender=PREMERE&route=4&country=91";
-
-                    request.get(string)
-                        .on('error', function(err){
-                            console.log(err);
-                        })
-                        .on('response' , function(response){
-                            // console.log(response);
-                        });
             };
 
  var sendESTANCIA = function(name,mobile,choose,print,time,comment,files){
@@ -151,20 +130,6 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
                             });
                             // close connection 
                             transporter.close();
-                            console.log(stringBuilder(name , time , "ESTANCIA"));
-                            var string = "https://control.msg91.com/api/sendhttp.php?authkey="+apiKey + "&mobile="+ mobile + "&message=" + stringBuilder(name ,time, "UB") + "&sender=PREMERE&route=4&country=91";
-
-                            request.get(string)
-                                .on('error', function(err){
-                                    console.log(err);
-                                })
-                                .on('response' , function(response){
-                                    // console.log(response);
-                                });
                     };
-
-function stringBuilder(name , time, dest){
-    return ( "Dear " + name + " your order will be available at " + dest + " @ " + time);
-}
 
     module.exports = {sendUB,sendABODE,sendESTANCIA}
