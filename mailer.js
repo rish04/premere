@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 );
 
 function stringBuilder(name , time,day, dest){
-    return ( "Dear " + name + " your order will be available at " + dest + " @ "+ time + " " + day );
+    return ( "Hey" + name + " your order will be available at " + dest + " @ "+ time + " " + day "Thanks for ordering your printout with Premere. We wish to serve you again soon.");
 };
 
 var sendUB = function(name,mobile,choose,print,time,comment,files){
