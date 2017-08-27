@@ -55,7 +55,7 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
             // close connection
             transporter.close();
             console.log(stringBuilder(name , time ,choose, "UB"));
-             var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"UB")+ "&sender=PREMERE&route=4&country=91";
+             var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"UB")+ "&sender=PRMERE&route=4&country=91";
 
                  request.get(string)
                      .on('error', function(err){
@@ -105,7 +105,7 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
                     // close connection
                     transporter.close();
                     console.log(stringBuilder(name , time,choose , "ABODE"));
-                    var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"ABODE")+ "&sender=PREMERE&route=4&country=91";
+                    var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"ABODE")+ "&sender=PRMERE&route=4&country=91";
 
                     request.get(string)
                         .on('error', function(err){
@@ -156,7 +156,7 @@ var sendUB = function(name,mobile,choose,print,time,comment,files){
                             // close connection
                             transporter.close();
                             console.log(stringBuilder(name , time, choose , "ESTANCIA"));
-                            var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"ESTANCIA")+ "&sender=PREMERE&route=4&country=91";
+                            var string = "https://control.msg91.com/api/sendhttp.php?authkey="+ apiKey + "&mobiles=" + mobile + "&message=" + stringBuilder(name,time,choose,"ESTANCIA")+ "&sender=PRMERE&route=4&country=91";
 
                             request.get(string)
                                 .on('error', function(err){
