@@ -28,7 +28,7 @@ if(req.body.pick === 'UB'){
   mailer.sendUB(req.body.name,req.body.mobile,req.body.choose,req.body.print,req.body.time,req.body.comment,req.files);
     // mail to UB
   }
- if(req.body.pick === "Estancia (6:00 PM - 7:00 PM)") {
+ if(req.body.pick === "Estancia (5:00 PM - 5:30 PM)") {
        mailer.sendESTANCIA(req.body.name,req.body.mobile,req.body.choose,req.body.print,req.body.time,req.body.comment,req.files);
  }
 if(req.body.pick === "Abode") {
